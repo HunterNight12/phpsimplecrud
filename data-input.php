@@ -3,7 +3,7 @@
 include_once 'config/class-master.php';
 $master = new MasterData();
 // Mengambil daftar program studi, provinsi, dan status mahasiswa
-$prodiList = $master->getProdi();
+$rankingList = $master->getRanking();
 // Mengambil daftar provinsi
 $provinsiList = $master->getProvinsi();
 // Mengambil daftar status mahasiswa
@@ -76,13 +76,13 @@ if(isset($_GET['status'])){
                                                 <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Lengkap Mahasiswa" required>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="prodi" class="form-label">Program Studi</label>
-                                                <select class="form-select" id="prodi" name="prodi" required>
-                                                    <option value="" selected disabled>Pilih Program Studi</option>
+                                                <label for="ranking" class="form-label">Ranking</label>
+                                                <select class="form-select" id="ranking" name="ranking" required>
+                                                    <option value="" selected disabled>Pilih Ranking Kamu</option>
                                                     <?php 
                                                     // Iterasi daftar program studi dan menampilkannya sebagai opsi dalam dropdown
-                                                    foreach ($prodiList as $prodi){
-                                                        echo '<option value="'.$prodi['id'].'">'.$prodi['nama'].'</option>';
+                                                    foreach ($rankingList as $ranking){
+                                                        echo '<option value="'.$ranking['id'].'">'.$ranking['nama'].'</option>';
                                                     }
                                                     ?>
                                                 </select>

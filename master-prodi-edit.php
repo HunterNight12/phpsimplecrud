@@ -3,13 +3,13 @@
 // Silakan lihat komentar di file data-edit.php untuk penjelasan kode ini, karena struktur dan logikanya serupa.
 include_once 'config/class-master.php';
 $master = new MasterData();
-$dataProdi = $master->getUpdateProdi($_GET['id']);
+$dataranking = $master->getUpdateRanking($_GET['id']);
 if(isset($_GET['status'])){
     if($_GET['status'] == 'failed'){
         echo "<script>alert('Gagal mengubah data program studi. Silakan coba lagi.');</script>";
     }
 }
-
+	
 ?>
 <!doctype html>
 <html lang="en">
@@ -31,12 +31,12 @@ if(isset($_GET['status'])){
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-sm-6">
-								<h3 class="mb-0">Edit Program Studi</h3>
+								<h3 class="mb-0">Edit Ranking</h3>
 							</div>
 							<div class="col-sm-6">
 								<ol class="breadcrumb float-sm-end">
 									<li class="breadcrumb-item"><a href="index.php">Beranda</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Edit Prodi</li>
+									<li class="breadcrumb-item active" aria-current="page">Edit ranking</li>
 								</ol>
 							</div>
 						</div>
@@ -49,7 +49,7 @@ if(isset($_GET['status'])){
 							<div class="col-12">
 								<div class="card">
 									<div class="card-header">
-										<h3 class="card-title">Formulir Program Studi</h3>
+										<h3 class="card-title">Formulir Ranking</h3>
 										<div class="card-tools">
 											<button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Collapse">
 												<i data-lte-icon="expand" class="bi bi-plus-lg"></i>
@@ -60,15 +60,15 @@ if(isset($_GET['status'])){
 											</button>
 										</div>
 									</div>
-                                    <form action="proses/proses-prodi.php?aksi=updateprodi" method="POST">
+                                    <form action="proses/proses-prodi.php?aksi=updateranking" method="POST">
 									    <div class="card-body">
                                             <div class="mb-3">
-                                                <label for="nama" class="form-label">Kode Program</label>
-                                                <input type="text" class="form-control-plaintext" id="kode" name="kode" placeholder="Masukkan Kode Program Studi" value="<?php echo $dataProdi['id']; ?>" required readonly>
+                                                <label for="nama" class="form-label">Kode Ranking</label>
+                                                <input type="text" class="form-control-plaintext" id="kode" name="kode" placeholder="Masukkan Kode Program Studi" value="<?php echo $dataranking['id']; ?>" required readonly>
                                             </div>
 											<div class="mb-3">
-												<label for="nama" class="form-label">Nama Program Studi</label>
-												<input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Program Studi" value="<?php echo $dataProdi['nama']; ?>" required>
+												<label for="nama" class="form-label">Nama Ranking</label>
+												<input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Program Studi" value="<?php echo $dataranking['nama']; ?>" required>
 											</div>
                                         </div>
 									    <div class="card-footer">

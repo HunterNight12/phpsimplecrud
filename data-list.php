@@ -74,7 +74,7 @@ $dataMahasiswa = $mahasiswa->getAllMahasiswa();
 													<th>No</th>
 													<th>NIM</th>
 													<th>Nama</th>
-													<th>Prodi</th>
+													<th>Ranking		</th>
 													<th>Provinsi</th>
 													<th>Alamat</th>
 													<th>Telp</th>
@@ -104,7 +104,7 @@ $dataMahasiswa = $mahasiswa->getAllMahasiswa();
 																<td>'.($index + 1).'</td>
 																<td>'.$mahasiswa['nim'].'</td>
 																<td>'.$mahasiswa['nama'].'</td>
-																<td>'.$mahasiswa['prodi'].'</td>
+																<td>'.$mahasiswa['ranking'].'</td>
 																<td>'.$mahasiswa['provinsi'].'</td>
 																<td>'.$mahasiswa['alamat'].'</td>
 																<td>'.$mahasiswa['telp'].'</td>

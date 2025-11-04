@@ -5,16 +5,16 @@ include_once 'config/class-master.php';
 $master = new MasterData();
 if(isset($_GET['status'])){
 	if($_GET['status'] == 'inputsuccess'){
-		echo "<script>alert('Data prodi berhasil ditambahkan.');</script>";
+		echo "<script>alert('Data ranking berhasil ditambahkan.');</script>";
 	} else if($_GET['status'] == 'editsuccess'){
-		echo "<script>alert('Data prodi berhasil diubah.');</script>";
+		echo "<script>alert('Data ranking berhasil diubah.');</script>";
 	} else if($_GET['status'] == 'deletesuccess'){
-		echo "<script>alert('Data prodi berhasil dihapus.');</script>";
+		echo "<script>alert('Data ranking berhasil dihapus.');</script>";
 	} else if($_GET['status'] == 'deletefailed'){
-		echo "<script>alert('Gagal menghapus data prodi. Silakan coba lagi.');</script>";
+		echo "<script>alert('Gagal menghapus data ranking. Silakan coba lagi.');</script>";
 	}
 }
-$dataProdi = $master->getProdi();
+$dataranking = $master->getRanking();
 
 ?>
 <!doctype html>
@@ -42,7 +42,7 @@ $dataProdi = $master->getProdi();
 							<div class="col-sm-6">
 								<ol class="breadcrumb float-sm-end">
 									<li class="breadcrumb-item"><a href="index.php">Beranda</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Master Prodi</li>
+									<li class="breadcrumb-item active" aria-current="page">Master ranking</li>
 								</ol>
 							</div>
 						</div>
@@ -78,19 +78,19 @@ $dataProdi = $master->getProdi();
 											</thead>
 											<tbody>
 												<?php
-													if(count($dataProdi) == 0){
+													if(count($dataranking) == 0){
 													    echo '<tr class="align-middle">
-															<td colspan="4" class="text-center">Tidak ada data prodi.</td>
+															<td colspan="4" class="text-center">Tidak ada data ranking.</td>
 														</tr>';
 													} else {
-														foreach ($dataProdi as $index => $prodi){
+														foreach ($dataranking as $index => $ranking){
 															echo '<tr class="align-middle">
 																<td>'.($index + 1).'</td>
-																<td>'.$prodi['id'].'</td>
-																<td>'.$prodi['nama'].'</td>
+																<td>'.$ranking['id'].'</td>
+																<td>'.$ranking['nama'].'</td>
 																<td class="text-center">
-																	<button type="button" class="btn btn-sm btn-warning me-1" onclick="window.location.href=\'master-prodi-edit.php?id='.$prodi['id'].'\'"><i class="bi bi-pencil-fill"></i> Edit</button>
-																	<button type="button" class="btn btn-sm btn-danger" onclick="if(confirm(\'Yakin ingin menghapus data program studi ini?\')){window.location.href=\'proses/proses-prodi.php?aksi=deleteprodi&id='.$prodi['id'].'\'}"><i class="bi bi-trash-fill"></i> Hapus</button>
+																	<button type="button" class="btn btn-sm btn-warning me-1" onclick="window.location.href=\'master-prodi-edit.php?id='.$ranking['id'].'\'"><i class="bi bi-pencil-fill"></i> Edit</button>
+																	<button type="button" class="btn btn-sm btn-danger" onclick="if(confirm(\'Yakin ingin menghapus data program studi ini?\')){window.location.href=\'proses/proses-prodi.php?aksi=deleteranking&id='.$ranking['id'].'\'}"><i class="bi bi-trash-fill"></i> Hapus</button>
 																</td>
 															</tr>';
 														}
@@ -100,7 +100,7 @@ $dataProdi = $master->getProdi();
 										</table>
 									</div>
 									<div class="card-footer">
-										<button type="button" class="btn btn-primary" onclick="window.location.href='master-prodi-input.php'"><i class="bi bi-plus-lg"></i> Tambah Prodi</button>
+										<button type="button" class="btn btn-primary" onclick="window.location.href='master-ranking-input.php'"><i class="bi bi-plus-lg"></i> Tambah ranking</button>
 									</div>
 								</div>
 							</div>

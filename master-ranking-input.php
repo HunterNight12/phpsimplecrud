@@ -71,7 +71,7 @@ if(isset($_GET['status'])){
 									    <div class="card-footer">
                                             <button type="button" class="btn btn-danger me-2 float-start" onclick="window.location.href='master-prodi-list.php'">Batal</button>
                                             <button type="reset" class="btn btn-secondary me-2 float-start">Reset</button>
-                                            <button type="submit" class="btn btn-primary float-end">Submit</button>
+                                            <button type="submit" class="btn btn-primary float-end" onclick="window.location.href='master-prodi-list.php'">Submit</button>
                                         </div>
                                     </form>
 								</div>

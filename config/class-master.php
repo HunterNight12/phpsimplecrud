@@ -6,19 +6,19 @@ include_once 'db-config.php';
 class MasterData extends Database {
 
     // Method untuk mendapatkan daftar program studi
-    public function getProdi(){
-        $query = "SELECT * FROM tb_prodi";
+    public function getRanking(){
+        $query = "SELECT * FROM tb_ranking";
         $result = $this->conn->query($query);
-        $prodi = [];
+        $ranking = [];
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-                $prodi[] = [
-                    'id' => $row['kode_prodi'],
-                    'nama' => $row['nama_prodi']
+                $ranking[] = [
+                    'id' => $row['kode_ranking'],
+                    'nama' => $row['nama_ranking']
                 ];
             }
         }
-        return $prodi;
+        return $ranking;
     }
 
     // Method untuk mendapatkan daftar provinsi
@@ -48,23 +48,23 @@ class MasterData extends Database {
     }
 
     // Method untuk input data program studi
-    public function inputProdi($data){
-        $kodeProdi = $data['kode'];
-        $namaProdi = $data['nama'];
-        $query = "INSERT INTO tb_prodi (kode_prodi, nama_prodi) VALUES (?, ?)";
+    public function inputRanking($data){
+        $koderanking = $data['kode'];
+        $namaranking = $data['nama'];
+        $query = "INSERT INTO tb_ranking (kode_ranking, nama_ranking) VALUES (?, ?)";
         $stmt = $this->conn->prepare($query);
         if(!$stmt){
             return false;
         }
-        $stmt->bind_param("ss", $kodeProdi, $namaProdi);
+        $stmt->bind_param("ss", $koderanking, $namaranking);
         $result = $stmt->execute();
         $stmt->close();
         return $result;
     }
 
     // Method untuk mendapatkan data program studi berdasarkan kode
-    public function getUpdateProdi($id){
-        $query = "SELECT * FROM tb_prodi WHERE kode_prodi = ?";
+    public function getUpdateRanking($id){
+        $query = "SELECT * FROM tb_ranking WHERE kode_ranking = ?";
         $stmt = $this->conn->prepare($query);
         if(!$stmt){
             return false;
@@ -72,36 +72,36 @@ class MasterData extends Database {
         $stmt->bind_param("s", $id);
         $stmt->execute();
         $result = $stmt->get_result();
-        $prodi = null;
+        $ranking = null;
         if($result->num_rows > 0){
             $row = $result->fetch_assoc();
-            $prodi = [
-                'id' => $row['kode_prodi'],
-                'nama' => $row['nama_prodi']
+            $ranking = [
+                'id ' => $row['kode_ranking'],
+                'nama' => $row['nama_ranking']
             ];
         }
         $stmt->close();
-        return $prodi;
+        return $ranking;
     }
 
     // Method untuk mengedit data program studi
-    public function updateProdi($data){
-        $kodeProdi = $data['kode'];
-        $namaProdi = $data['nama'];
-        $query = "UPDATE tb_prodi SET nama_prodi = ? WHERE kode_prodi = ?";
+    public function updateRanking($data){
+        $koderanking = $data['kode'];
+        $namaranking = $data['nama'];
+        $query = "UPDATE tb_ranking SET kode_ranking = ? WHERE nama_ranking = ?";
         $stmt = $this->conn->prepare($query);
         if(!$stmt){
             return false;
         }
-        $stmt->bind_param("ss", $namaProdi, $kodeProdi);
+        $stmt->bind_param("ss", $koderanking, $namaranking);
         $result = $stmt->execute();
         $stmt->close();
         return $result;
     }
 
     // Method untuk menghapus data program studi
-    public function deleteProdi($id){
-        $query = "DELETE FROM tb_prodi WHERE kode_prodi = ?";
+    public function deleteRanking($id){
+        $query = "DELETE FROM tb_ranking WHERE kode_ranking = ?";
         $stmt = $this->conn->prepare($query);
         if(!$stmt){
             return false;

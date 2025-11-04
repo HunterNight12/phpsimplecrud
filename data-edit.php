@@ -5,7 +5,7 @@ include_once 'config/class-mahasiswa.php';
 $master = new MasterData();
 $mahasiswa = new Mahasiswa();
 // Mengambil daftar program studi, provinsi, dan status mahasiswa
-$prodiList = $master->getProdi();
+$rankingList = $master->getRanking();
 // Mengambil daftar provinsi
 $provinsiList = $master->getProvinsi();
 // Mengambil daftar status mahasiswa
@@ -79,21 +79,21 @@ if(isset($_GET['status'])){
                                                 <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Lengkap Mahasiswa" value="<?php echo $dataMahasiswa['nama']; ?>" required>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="prodi" class="form-label">Program Studi</label>
-                                                <select class="form-select" id="prodi" name="prodi" required>
+                                                <label for="ranking" class="form-label">Program Studi</label>
+                                                <select class="form-select" id="ranking" name="ranking" required>
                                                     <option value="" selected disabled>Pilih Program Studi</option>
                                                     <?php 
                                                     // Iterasi daftar program studi dan menandai yang sesuai dengan data mahasiswa yang dipilih
-                                                    foreach ($prodiList as $prodi){
+                                                    foreach ($rankingList as $ranking){
                                                         // Menginisialisasi variabel kosong untuk menandai opsi yang dipilih
-                                                        $selectedProdi = "";
+                                                        $selectedranking = "";
                                                         // Mengecek apakah program studi saat ini sesuai dengan data mahasiswa
-                                                        if($dataMahasiswa['prodi'] == $prodi['id']){
+                                                        if($dataMahasiswa['ranking'] == $ranking['id']){
                                                             // Jika sesuai, tandai sebagai opsi yang dipilih
-                                                            $selectedProdi = "selected";
+                                                            $selectedranking = "selected";
                                                         }
                                                         // Menampilkan opsi program studi dengan penanda yang sesuai
-                                                        echo '<option value="'.$prodi['id'].'" '.$selectedProdi.'>'.$prodi['nama'].'</option>';
+                                                        echo '<option value="'.$ranking['id'].'" '.$selectedranking.'>'.$ranking['nama'].'</option>';
                                                     }
                                                     ?>
                                                 </select>
