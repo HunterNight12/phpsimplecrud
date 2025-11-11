@@ -145,7 +145,7 @@ class Mahasiswa extends Database {
                   FROM tb_mahasiswa
                   JOIN tb_ranking ON ranking_mhs = kode_ranking
                   JOIN tb_provinsi ON provinsi = id_provinsi
-                  WHERE nim_mhs LIKE ? OR nama_mhs LIKE ?";
+                  WHERE nama_ranking LIKE ? OR nama_mhs LIKE ?";
         $stmt = $this->conn->prepare($query);
         if(!$stmt){
             // Mengembalikan array kosong jika statement gagal disiapkan

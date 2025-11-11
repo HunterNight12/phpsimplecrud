@@ -1,5 +1,5 @@
 /*
-SQLyog Professional v12.5.1 (64 bit)
+SQLyog Ultimate v12.5.1 (64 bit)
 MySQL - 8.0.30 : Database - db_simplecrud
 *********************************************************************
 */
@@ -31,13 +31,16 @@ CREATE TABLE `tb_mahasiswa` (
   `telp` char(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `status_mhs` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_mhs`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `tb_mahasiswa` */
 
 insert  into `tb_mahasiswa`(`id_mhs`,`nim_mhs`,`nama_mhs`,`ranking_mhs`,`alamat`,`provinsi`,`email`,`telp`,`status_mhs`) values 
-(1,'3123124455','vortex','HR','MOKA',1,'aefafdahibdha@gmail.com','242135246247',1),
-(2,'2312323','sura','IMO','idb',1,'makima@gmail.com','242135246247',1);
+(1,'3123124455','vortex','IMO','MOKA',1,'aefafdahibdha@gmail.com','242135246247',1),
+(2,'2312323','sura','IMO','IDB',1,'makima@gmail.com','242135246247',1),
+(3,'1234123523','sabar','GRY','NMC',1,'elsabar@gmail.com','01923481293',1),
+(4,'1312415213','JUL','IMO','IDB',1,'jul@gmail.com','312423542345634',4),
+(5,'1234134325','cecep bin cogan','IMO','gorong',5,'makima@gmail.com','312423542345634',2);
 
 /*Table structure for table `tb_provinsi` */
 
@@ -47,7 +50,7 @@ CREATE TABLE `tb_provinsi` (
   `id_provinsi` smallint NOT NULL AUTO_INCREMENT,
   `nama_provinsi` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id_provinsi`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `tb_provinsi` */
 
@@ -57,7 +60,8 @@ insert  into `tb_provinsi`(`id_provinsi`,`nama_provinsi`) values
 (3,'Nusa Tenggara Barat'),
 (4,'Jawa Timur'),
 (5,'Jawa Tengah'),
-(6,'Jawa Barat');
+(6,'Jawa Barat'),
+(7,'Kalimantan');
 
 /*Table structure for table `tb_ranking` */
 
@@ -74,8 +78,11 @@ CREATE TABLE `tb_ranking` (
 insert  into `tb_ranking`(`kode_ranking`,`nama_ranking`) values 
 ('BR','BRONZE'),
 ('DM','DIAMOND'),
+('EL','ELITE'),
 ('EP','EPIC'),
-('GD','GOLD'),
+('GD','GRANDMASTER'),
+('GRD','GUARDIAN'),
+('GRY','GLORY'),
 ('HR','HONOR'),
 ('IMO','IMMORTAL'),
 ('LD','LEGEND'),

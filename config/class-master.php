@@ -76,7 +76,7 @@ class MasterData extends Database {
         if($result->num_rows > 0){
             $row = $result->fetch_assoc();
             $ranking = [
-                'id ' => $row['kode_ranking'],
+                'id' => $row['kode_ranking'],
                 'nama' => $row['nama_ranking']
             ];
         }
@@ -88,12 +88,12 @@ class MasterData extends Database {
     public function updateRanking($data){
         $koderanking = $data['kode'];
         $namaranking = $data['nama'];
-        $query = "UPDATE tb_ranking SET kode_ranking = ? WHERE nama_ranking = ?";
+        $query = "UPDATE tb_ranking SET nama_ranking = ? WHERE kode_ranking = ?";
         $stmt = $this->conn->prepare($query);
         if(!$stmt){
             return false;
         }
-        $stmt->bind_param("ss", $koderanking, $namaranking);
+        $stmt->bind_param("ss", $namaranking, $koderanking);
         $result = $stmt->execute();
         $stmt->close();
         return $result;

@@ -63,12 +63,12 @@ if(isset($_GET['status'])){
                                     <form action="proses/proses-prodi.php?aksi=updateranking" method="POST">
 									    <div class="card-body">
                                             <div class="mb-3">
-                                                <label for="nama" class="form-label">Kode Ranking</label>
-                                                <input type="text" class="form-control-plaintext" id="kode" name="kode" placeholder="Masukkan Kode Program Studi" value="<?php echo $dataranking['id']; ?>" required readonly>
+                                                <label for="id" class="form-label">Kode Ranking</label>
+                             	                   <input type="text" class="form-control-plaintext" id="kode" name="kode" placeholder="Masukkan Kode Ranking" value="<?php echo $dataranking['id']; ?>" required readonly>
                                             </div>
 											<div class="mb-3">
 												<label for="nama" class="form-label">Nama Ranking</label>
-												<input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Program Studi" value="<?php echo $dataranking['nama']; ?>" required>
+												<input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Ranking" value="<?php echo $dataranking['nama']; ?>" required >
 											</div>
                                         </div>
 									    <div class="card-footer">

@@ -20,10 +20,9 @@ if($_GET['aksi'] == 'inputprodi'){
         // Jika gagal, redirect ke halaman master-Ranking-input.php dengan status failed
         header("Location: ../master-ranking-input.php?status=failed");
     }
-} elseif($_GET['aksi'] == 'updateranking    '){
+} elseif($_GET['aksi'] == 'updateranking'){
     // Mengambil data Ranking dari form edit menggunakan metode POST dan menyimpannya dalam array
     $dataranking = [
-        'id' => $_POST['id'],   
         'kode' => $_POST['kode'],
         'nama' => $_POST['nama']
     ];
@@ -36,7 +35,7 @@ if($_GET['aksi'] == 'inputprodi'){
         // Jika gagal, redirect ke halaman master-Ranking-edit.php dengan status failed dan membawa id Ranking
         header("Location: ../master-prodi-edit.php?id=".$dataranking['id']."&status=failed");
     }
-} elseif($_GET['aksi'] == 'deleteprodi'){
+} elseif($_GET['aksi'] == 'deleteranking'){
     // Mengambil id Ranking dari parameter GET
     $id = $_GET['id'];
     // Memanggil method deleteRanking untuk menghapus data Ranking berdasarkan id

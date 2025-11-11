@@ -31,12 +31,12 @@ if(isset($_GET['search'])){
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-sm-6">
-								<h3 class="mb-0">Cari Mahasiswa</h3>
+								<h3 class="mb-0">Cari Player</h3>
 							</div>
 							<div class="col-sm-6">
 								<ol class="breadcrumb float-sm-end">
 									<li class="breadcrumb-item"><a href="index.php">Beranda</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Cari Data</li>
+									<li class="breadcrumb-item active" aria-current="page">Cari Data Player</li>
 								</ol>
 							</div>
 						</div>
@@ -49,7 +49,7 @@ if(isset($_GET['search'])){
 							<div class="col-12">
 								<div class="card mb-3">
 									<div class="card-header">
-										<h3 class="card-title">Pencarian Mahasiswa</h3>
+										<h3 class="card-title">Pencarian Player</h3>
 										<div class="card-tools">
 											<button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Collapse">
 												<i data-lte-icon="expand" class="bi bi-plus-lg"></i>
@@ -63,7 +63,7 @@ if(isset($_GET['search'])){
 									<div class="card-body">
 										<form action="data-search.php" method="GET">
 											<div class="mb-3">
-												<label for="search" class="form-label">Masukkan NIM atau Nama Mahasiswa</label>
+												<label for="search" class="form-label">Masukkan Ranking atau Nama Player</label>
 												<input type="text" class="form-control" id="search" name="search" placeholder="Cari berdasarkan NIM atau Nama Mahasiswa" value="<?php echo $kataKunci; ?>" required>
 											</div>
 											<button type="submit" class="btn btn-primary"><i class="bi bi-search-heart-fill"></i> Cari</button>
@@ -96,7 +96,7 @@ if(isset($_GET['search'])){
 															<th>No</th>
 															<th>NIM</th>
 															<th>Nama</th>
-															<th>Prodi</th>
+															<th>Ranking</th>
 															<th>Provinsi</th>
 															<th>Alamat</th>
 															<th>Telp</th>
@@ -123,7 +123,7 @@ if(isset($_GET['search'])){
 															<td>'.($index + 1).'</td>
 															<td>'.$mahasiswa['nim'].'</td>
 															<td>'.$mahasiswa['nama'].'</td>
-															<td>'.$mahasiswa['prodi'].'</td>
+															<td>'.$mahasiswa['ranking'].'</td>
 															<td>'.$mahasiswa['provinsi'].'</td>
 															<td>'.$mahasiswa['alamat'].'</td>
 															<td>'.$mahasiswa['telp'].'</td>
