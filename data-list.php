@@ -6,13 +6,13 @@ $mahasiswa = new Mahasiswa();
 if(isset($_GET['status'])){
 	// Mengecek nilai parameter GET 'status' dan menampilkan alert yang sesuai menggunakan JavaScript
 	if($_GET['status'] == 'inputsuccess'){
-		echo "<script>alert('Data mahasiswa berhasil ditambahkan.');</script>";
+		echo "<script>alert('Data player berhasil ditambahkan.');</script>";
 	} else if($_GET['status'] == 'editsuccess'){
-		echo "<script>alert('Data mahasiswa berhasil diubah.');</script>";
+		echo "<script>alert('Data player berhasil diubah.');</script>";
 	} else if($_GET['status'] == 'deletesuccess'){
-		echo "<script>alert('Data mahasiswa berhasil dihapus.');</script>";
+		echo "<script>alert('Data player berhasil dihapus.');</script>";
 	} else if($_GET['status'] == 'deletefailed'){
-		echo "<script>alert('Gagal menghapus data mahasiswa. Silakan coba lagi.');</script>";
+		echo "<script>alert('Gagal menghapus data player. Silakan coba lagi.');</script>";
 	}
 }
 $dataMahasiswa = $mahasiswa->getAllMahasiswa();

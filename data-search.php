@@ -64,7 +64,7 @@ if(isset($_GET['search'])){
 										<form action="data-search.php" method="GET">
 											<div class="mb-3">
 												<label for="search" class="form-label">Masukkan Ranking atau Nama Player</label>
-												<input type="text" class="form-control" id="search" name="search" placeholder="Cari berdasarkan NIM atau Nama Mahasiswa" value="<?php echo $kataKunci; ?>" required>
+												<input type="text" class="form-control" id="search" name="search" placeholder="Cari berdasarkan Ranking atau Nama Player" value="<?php echo $kataKunci; ?>" required>
 											</div>
 											<button type="submit" class="btn btn-primary"><i class="bi bi-search-heart-fill"></i> Cari</button>
 										</form>
@@ -131,7 +131,7 @@ if(isset($_GET['search'])){
 															<td class="text-center">'.$mahasiswa['status'].'</td>
 															<td class="text-center">
 																<button type="button" class="btn btn-sm btn-warning me-1" onclick="window.location.href=\'data-edit.php?id='.$mahasiswa['id'].'\'"><i class="bi bi-pencil-fill"></i> Edit</button>
-																<button type="button" class="btn btn-sm btn-danger" onclick="if(confirm(\'Yakin ingin menghapus data mahasiswa ini?\')){window.location.href=\'proses/proses-delete.php?id='.$mahasiswa['id'].'\'}"><i class="bi bi-trash-fill"></i> Hapus</button>
+																<button type="button" class="btn btn-sm btn-danger" onclick="if(confirm(\'Yakin ingin menghapus data player ini?\')){window.location.href=\'proses/proses-delete.php?id='.$mahasiswa['id'].'\'}"><i class="bi bi-trash-fill"></i> Hapus</button>
 															</td>
 														</tr>';
 													}
@@ -140,13 +140,13 @@ if(isset($_GET['search'])){
 											} else {
 												// Menampilkan pesan jika tidak ada data mahasiswa yang ditemukan
 												echo '<div class="alert alert-warning" role="alert">
-														Tidak ditemukan data mahasiswa yang sesuai dengan kata kunci "<strong>'.htmlspecialchars($_GET['search']).'</strong>".
+														Tidak ditemukan data player yang sesuai dengan kata kunci "<strong>'.htmlspecialchars($_GET['search']).'</strong>".
 													  </div>';
 											}
 										} else {
 											// Menampilkan pesan jika form pencarian belum disubmit
 											echo '<div class="alert alert-info" role="alert">
-													Silakan masukkan kata kunci pencarian di atas untuk mencari data mahasiswa.
+													Silakan masukkan kata kunci pencarian di atas untuk mencari data player.
 												  </div>';
 										}
 										?>

@@ -53,7 +53,7 @@
 										<p>Halo PLAYER! UNIML merupakan singkatan dari Universitas Mobile Legends,Universitas ini bertujuan untuk mengajarkan bagaimana cara menjadi player mobile legeds dengan baik dan profesional,dan sehingga dilirik oleh tim esport ternama</p>
 										<p>Silakan pilih salah satu tombol untuk memulai!</p>
 										<a href="data-input.php" class="btn btn-primary btn-lg"><i class="bi bi-clipboard-data-fill"></i> Input Data Player</a>
-										<a href="data-list.php" class="btn btn-success btn-lg"><i class="bi bi-card-list"></i> Lihat Daftar player</a>
+										<a href="data-list.php" class="btn btn-success btn-lg"><i class="bi bi-card-list"></i> Lihat Daftar Player</a>
 										<a href="data-search.php" class="btn btn-warning btn-lg"><i class="bi bi-search-heart-fill"></i> Cari Player</a>
 									</div>
 

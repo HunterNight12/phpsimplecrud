@@ -12,7 +12,7 @@ $statusList = $master->getStatus();
 if(isset($_GET['status'])){
     // Mengecek nilai parameter GET 'status' dan menampilkan alert yang sesuai menggunakan JavaScript
     if($_GET['status'] == 'failed'){
-        echo "<script>alert('Gagal menambahkan data mahasiswa. Silakan coba lagi.');</script>";
+        echo "<script>alert('Gagal menambahkan data player. Silakan coba lagi.');</script>";
     }
 }
 ?>

@@ -14,7 +14,7 @@ $statusList = $master->getStatus();
 $dataMahasiswa = $mahasiswa->getUpdateMahasiswa($_GET['id']);
 if(isset($_GET['status'])){
     if($_GET['status'] == 'failed'){
-        echo "<script>alert('Gagal mengubah data mahasiswa. Silakan coba lagi.');</script>";
+        echo "<script>alert('Gagal mengubah data player. Silakan coba lagi.');</script>";
     }
 }
 ?>
@@ -38,12 +38,12 @@ if(isset($_GET['status'])){
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-sm-6">
-								<h3 class="mb-0">Edit Mahasiswa</h3>
+								<h3 class="mb-0">Edit Player</h3>
 							</div>
 							<div class="col-sm-6">
 								<ol class="breadcrumb float-sm-end">
 									<li class="breadcrumb-item"><a href="index.php">Beranda</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Edit Data</li>
+									<li class="breadcrumb-item active" aria-current="page">Edit Data Player</li>
 								</ol>
 							</div>
 						</div>
@@ -56,7 +56,7 @@ if(isset($_GET['status'])){
 							<div class="col-12">
 								<div class="card">
 									<div class="card-header">
-										<h3 class="card-title">Formulir Mahasiswa</h3>
+										<h3 class="card-title">Formulir Player</h3>
 										<div class="card-tools">
 											<button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Collapse">
 												<i data-lte-icon="expand" class="bi bi-plus-lg"></i>
@@ -71,17 +71,17 @@ if(isset($_GET['status'])){
 									    <div class="card-body">
                                             <input type="hidden" name="id" value="<?php echo $dataMahasiswa['id']; ?>">
                                             <div class="mb-3">
-                                                <label for="nim" class="form-label">Nomor Induk Mahasiswa (NIM)</label>
-                                                <input type="number" class="form-control" id="nim" name="nim" placeholder="Masukkan NIM Mahasiswa" value="<?php echo $dataMahasiswa['nim']; ?>" required>
+                                                <label for="nim" class="form-label">Nomor Induk Player (NIP)</label>
+                                                <input type="number" class="form-control" id="nim" name="nim" placeholder="Masukkan NIP Player" value="<?php echo $dataMahasiswa['nim']; ?>" required>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="nama" class="form-label">Nama Lengkap</label>
-                                                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Lengkap Mahasiswa" value="<?php echo $dataMahasiswa['nama']; ?>" required>
+                                                <label for="nama" class="form-label">Nama Lengkap Player</label>
+                                                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Lengkap Player" value="<?php echo $dataMahasiswa['nama']; ?>" required>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="ranking" class="form-label">Program Studi</label>
+                                                <label for="ranking" class="form-label">Ranking</label>
                                                 <select class="form-select" id="ranking" name="ranking" required>
-                                                    <option value="" selected disabled>Pilih Program Studi</option>
+                                                    <option value="" selected disabled>Pilih Ranking</option>
                                                     <?php 
                                                     // Iterasi daftar program studi dan menandai yang sesuai dengan data mahasiswa yang dipilih
                                                     foreach ($rankingList as $ranking){
